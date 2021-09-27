@@ -19,19 +19,23 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link rel="shortcut icon" href="{{ asset('img/logo.png')}}" type="image/x-icon">
 </head>
 <body>
     <div id="app">
-        <section class="banner">
+        <nav class="banner">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-4">
-                        <img src="{{ asset('img/logo.png')}}" class="img-fluid pt-2 pb-2" width="100" alt="">
+                    <div class="col-md-6">
+                        <a href="{{ url('/') }}" class="navbar-brand">
+                            <img src="{{ asset('img/logo.png')}}" class="img-fluid" width="100" alt="">
+                            <img src="{{ asset('img/perpus.png')}}" class="img-fluid" alt="" width="200">
+                        </a>
                     </div>
                 </div>
             </div>
-        </section>
+        </nav>
         <nav class="navbar navbar-expand-md navbar-dark" style="background: #14279B;">
             <div class="container">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -42,16 +46,16 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="{{ url('/') }}">Home</a>
+                            <a class="nav-link " href="{{ url('/') }}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="{{ url('/') }}">Tentang</a>
+                            <a class="nav-link " href="{{ url('/') }}">Tentang</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="{{ url('/') }}">Program Studi</a>
+                            <a class="nav-link " href="{{ url('/') }}">Program Studi</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="{{ url('/') }}">Panduan</a>
+                            <a class="nav-link " href="{{ url('/') }}">Panduan</a>
                         </li>
                     </ul>
 
@@ -60,16 +64,16 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link text-white" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link {{ (request()->segment(1) == 'login') ? 'active' : '' }}" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link text-white" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link {{ (request()->segment(1) == 'register') ? 'active' : '' }}" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle " href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
@@ -92,7 +96,7 @@
         </nav>
         <div class="jumbotron jumbotron-fluid">
             <div class="container">
-                <h1 class="display-4">E-skripsi Cendekiaku</h1>
+                <h1 class="display-4 text-warning">E-skripsi Cendekiaku</h1>
                 <div class="row justify-content-center">
                     <div class="col-md-10">
                         <form action="" method="GET">
