@@ -1,5 +1,22 @@
 @extends('layouts.app')
 
+@section('search')
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4 text-warning">E-skripsi Cendekiaku</h1>
+            <div class="row justify-content-center">
+                <div class="col-md-10">
+                    <form action="" method="GET">
+                        <div class="form-group has-search">
+                            <span class="fa fa-search form-control-feedback text-dark"></span>
+                            <input type="search" name="search" class="form-control" placeholder="Cari judul skripsi ...">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection
 @section('content')
     <div class="welcome">
         <div class="container">
