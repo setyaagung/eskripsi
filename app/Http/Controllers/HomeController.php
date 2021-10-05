@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Model\Mahasiswa;
+use App\Model\Skripsi;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -23,6 +27,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $user = User::where('id', Auth::user()->id)->first();
+        $mahasiswa = Mahasiswa::where('id_user', $user->id)->first();
+        $skripsi = Skripsi::where('id_mahasiswa', $mahasiswa->id_mahasiswa)->first();
+        return view('frontend.skripsi.index', \compact('user', 'mahasiswa', 'skripsi'));
     }
 }

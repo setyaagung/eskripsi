@@ -33,7 +33,7 @@ class LoginController extends Controller
         if (Auth::user()->id_role == 1) {
             return 'dashboard';
         } elseif (Auth::user()->id_role == 2) {
-            return 'home';
+            return 'penelitian/skripsi';
         } else {
             Auth::logout();
             Session::flash('status', 'Akun anda belum terdaftar dalam sistem ini');

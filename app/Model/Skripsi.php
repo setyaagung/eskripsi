@@ -24,4 +24,9 @@ class Skripsi extends Model
         'kata_kunci',
         'daftar_pustaka'
     ];
+
+    public function pem1()
+    {
+        return $this->belongsTo(Dosen::class, 'id_dosen', 'pembimbing1');
+    }
 }

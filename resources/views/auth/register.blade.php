@@ -73,7 +73,7 @@
                 </div>
 
                 <div class="form-group text-center mb-0 mt-3">
-                    <button type="submit" class="btn btn-success">
+                    <button type="submit" class="btn text-white" style="background: #046314">
                         <i class="fa fa-sign-in"></i> REGISTRASI
                     </button>
                 </div>

@@ -15,9 +15,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+Auth::routes([
+    'reset' => false
+]);
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/penelitian/skripsi', 'HomeController@index')->name('skripsi');
 
 Route::namespace('Admin')->middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('/dashboard', 'DashboardController@index')->name('dashboard');

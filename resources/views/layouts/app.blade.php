@@ -19,7 +19,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/main.css') }}" rel="stylesheet">
     <link rel="shortcut icon" href="{{ asset('img/logo.png')}}" type="image/x-icon">
 </head>
 <body>
@@ -36,7 +36,7 @@
                 </div>
             </div>
         </nav>
-        <nav class="navbar navbar-expand-md navbar-dark" style="background: #14279B;">
+        <nav class="navbar navbar-expand-md navbar-dark" style="background: #046314">
             <div class="container">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -46,17 +46,26 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
-                            <a class="nav-link " href="{{ url('/') }}">Home</a>
+                            <a class="nav-link {{ (request()->segment(1) == '') ? 'active' : '' }}" href="{{ url('/') }}">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link " href="{{ url('/') }}">Tentang</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="{{ url('/') }}">Program Studi</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link " href="{{ url('/') }}">Panduan</a>
                         </li>
+                        @auth
+                            <li class="nav-item dropdown {{ (request()->segment(2) == 'skripsi') ? 'active' : '' }}">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle " href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    Penelitian Anda <span class="caret"></span>
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item {{ (request()->segment(2) == 'skripsi') ? 'active' : '' }}" href="{{ route('skripsi') }}">Skripsi</a>
+                                    <a class="dropdown-item" href="#">Jurnal</a>
+                                </div>
+                            </li>
+                        @endauth
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -99,7 +108,7 @@
             @yield('content')
         </main>
         <!-- Footer -->
-        <footer class="text-center text-lg-start text-white" style="background: #14279B;">
+        <footer class="text-center text-lg-start text-white" style="background: #046314;">
 
             <!-- Section: Links  -->
             <section class="p-1">
@@ -109,9 +118,9 @@
                         <!-- Grid column -->
                         <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
                             <!-- Content -->
-                            <h6 class="text-uppercase fw-bold mb-4">
-                                <img src="{{ asset('img/logo.png')}}" class="img-fluid" width="50" alt=""> STIE Cendekia Karya Utama
-                            </h6>
+                            <h5 class="text-uppercase fw-bold mb-4">
+                                Perpustakaan<br>STIE Cendekia Karya Utama
+                            </h5>
                     <p>
                       Here you can use rows and columns to organize your footer content. Lorem ipsum
                       dolor sit amet, consectetur adipisicing elit.
