@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,19 +8,26 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>Cendekiaku Science</title>
-
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    <!-- Select2 -->
+    <link rel="stylesheet" href="{{ asset('assets/plugins/select2/css/select2.min.css')}}">
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
+    <!-- summernote -->
+    <link rel="stylesheet" href="{{ asset('assets/plugins/summernote/summernote-bs4.min.css')}}">
     <link rel="shortcut icon" href="{{ asset('img/logo.png')}}" type="image/x-icon">
+    <style type="text/css">
+        .dropdown-item.active,
+        .dropdown-item:active {
+            color: #f4ec10;
+            text-decoration: none;
+            background-color: #046314;
+        }
+    </style>
 </head>
 <body>
     <div id="app">
@@ -193,12 +200,23 @@
             <!-- Copyright -->
             <div class="text-center text-white p-4">
                 © 2021 Copyright:
-                <a class="text-reset text-warning" href="https://cendekiaku.ac.id/">STIE Cendekia Karya Utama</a>
+                <a class="text-reset text-warning" href="https://cendekiaku.ac.id/" target="_blank">STIE Cendekia Karya Utama</a>
             </div>
             <!-- Copyright -->
         </footer>
         <!-- Footer -->
 
     </div>
+    <!-- jQuery -->
+    <script src="{{ asset('assets/plugins/jquery/jquery.min.js')}}"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="{{ asset('assets/plugins/jquery-ui/jquery-ui.min.js')}}"></script>
+    <!-- Bootstrap 4 -->
+		<script src="{{ asset('assets/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+    <!-- Select2 -->
+    <script src="{{ asset('assets/plugins/select2/js/select2.full.min.js')}}"></script>
+    <!-- Summernote -->
+    <script src="{{ asset('assets/plugins/summernote/summernote-bs4.min.js')}}"></script>
+    @stack('scripts')
 </body>
 </html>

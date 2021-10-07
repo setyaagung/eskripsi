@@ -18,6 +18,8 @@ class CreateSkripsiTable extends Migration
             $table->unsignedBigInteger('id_mahasiswa');
             $table->date('mulai_bimbingan')->nullable();
             $table->date('selesai_bimbingan')->nullable();
+            $table->string('aprrove')->default('Tidak');
+            $table->string('publish')->default('Tidak');
             $table->unsignedBigInteger('pembimbing1')->nullable();
             $table->unsignedBigInteger('pembimbing2')->nullable();
             $table->unsignedBigInteger('penguji1')->nullable();
@@ -29,6 +31,9 @@ class CreateSkripsiTable extends Migration
             $table->text('abstrak_eng')->nullable();
             $table->text('kata_kunci')->nullable();
             $table->text('daftar_pustaka')->nullable();
+            $table->string('nilai_angka')->nullable();
+            $table->string('nilai_huruf')->nullable();
+            $table->text('slug')->nullable();
             $table->timestamps();
 
             $table->foreign('id_mahasiswa')->references('id_mahasiswa')->on('mahasiswa')->onDelete('cascade');

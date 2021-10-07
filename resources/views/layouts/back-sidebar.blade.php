@@ -36,6 +36,12 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a href="{{ route('mahasiswa.index')}}" class="nav-link {{ (request()->segment(1) == 'mahasiswa') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-users"></i>
+                        <p>Mahasiswa</p>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="{{ route('user.index')}}" class="nav-link {{ (request()->segment(1) == 'user') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-user"></i>
                         <p>Kelola Pengguna</p>

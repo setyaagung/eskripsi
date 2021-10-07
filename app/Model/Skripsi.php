@@ -12,6 +12,8 @@ class Skripsi extends Model
         'id_mahasiswa',
         'mulai_bimbingan',
         'selesai_bimbingan',
+        'aprrove',
+        'publish',
         'pembimbing1',
         'pembimbing2',
         'penguji1',
@@ -22,11 +24,30 @@ class Skripsi extends Model
         'abstrak_indo',
         'abstrak_eng',
         'kata_kunci',
-        'daftar_pustaka'
+        'daftar_pustaka',
+        'nilai_angka',
+        'nilai_huruf',
+        'slug'
     ];
 
     public function pem1()
     {
-        return $this->belongsTo(Dosen::class, 'id_dosen', 'pembimbing1');
+        return $this->belongsTo(Dosen::class, 'pembimbing1', 'id_dosen');
+    }
+    public function pem2()
+    {
+        return $this->belongsTo(Dosen::class, 'pembimbing2', 'id_dosen');
+    }
+    public function peng1()
+    {
+        return $this->belongsTo(Dosen::class, 'penguji1', 'id_dosen');
+    }
+    public function peng2()
+    {
+        return $this->belongsTo(Dosen::class, 'penguji2', 'id_dosen');
+    }
+    public function peng3()
+    {
+        return $this->belongsTo(Dosen::class, 'penguji3', 'id_dosen');
     }
 }
