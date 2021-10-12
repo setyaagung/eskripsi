@@ -27,18 +27,67 @@
             text-decoration: none;
             background-color: #046314;
         }
+        .panel {
+            padding: 15px;
+        }
+        .panel i{
+            width: 60px;
+            height: 60px;
+            color: #046314;
+        }
+        .panel h4{
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 2px;
+        }
+        .panel p{
+            font-size: 14px;
+            color: gray;
+            font-weight: 200;
+        }
+        @media (max-width: 576px) {
+            .jumbotron .display-4 {
+                font-size: 28px !important;
+            }
+        }
     </style>
 </head>
 <body>
     <div id="app">
         <nav class="banner">
             <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <a href="{{ url('/') }}" class="navbar-brand">
-                            <img src="{{ asset('img/logo.png')}}" class="img-fluid" width="100" alt="">
-                            <img src="{{ asset('img/perpus.png')}}" class="img-fluid" alt="" width="200">
-                        </a>
+                <div class="row justify-content-center">
+                    <div class="col-12 panel">
+                        <div class="row">
+                            <div class="col-lg">
+                                <a href="{{ url('/') }}">
+                                    <img src="{{ asset('img/logo.png')}}" class="img-fluid" width="100" alt="">
+                                    <img src="{{ asset('img/perpus1.png')}}" class="img-fluid" alt="" width="110">
+                                </a>
+                            </div>
+                            <div class="col-lg mt-3">
+                                <i class="fa fa-envelope fa-3x float-left"></i>
+                                <h4 class="mt-1">perpustakaan@cku.ac.id <br>
+                                </h4>
+                                <p>GET IN TOUCH WITH EMAIL</p>
+                            </div>
+                            <div class="col-lg mt-3">
+                                <i class="fa fa-clock-o fa-3x float-left"></i>
+                                <h4>
+                                    Senin - Jumat <br>
+                                    08.00 - 16.00
+                                </h4>
+                                <p>OUR OFFICE HOUR</p>
+                            </div>
+                            <div class="col-lg mt-3">
+                                <i class="fa fa-phone fa-3x float-left"></i>
+                                <h4>
+                                    024 - 76440587 <br>
+                                    082135675554
+                                </h4>
+                                <p>CALL US TODAY</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
