@@ -20,6 +20,22 @@
                             </button>
                         </div>
                     @endif
+                    @if ($message = Session::get('create'))
+                        <div class="alert alert-info alert-dismissible fade show" role="alert">
+                            <strong>Berhasil!</strong> {{$message}}.
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    @endif
+                    @if ($message = Session::get('delete'))
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <strong>Dihapus!</strong> {{$message}}.
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    @endif
                     <table class="table table-sm" style="width: 100%;font-size:13px">
                         <tr>
                             <td style="width: 15%">NIM</td>
@@ -145,7 +161,7 @@
                             <td>File</td>
                             <td>:</td>
                             <td colspan="4">
-                                <a href="" class="btn btn-secondary btn-sm mb-2"><i class="fa fa-file"></i> Tambah File</a>
+                                <a href="{{ route('create.file')}}" class="btn btn-secondary btn-sm mb-2"><i class="fa fa-file"></i> Tambah File</a>
                                 <table class="table table-sm table-bordered">
                                     <thead class="bg-dark text-white">
                                         <tr>
@@ -155,6 +171,28 @@
                                             <th>AKSI</th>
                                         </tr>
                                     </thead>
+                                    <tbody>
+                                        @forelse ($files as $file)
+                                            <tr>
+                                                <td>{{ $loop->iteration}}</td>
+                                                <td>{{ $file->jenis_file}}</td>
+                                                <td>
+                                                    <a href="{{ Storage::url($file->nama_file)}}" class="btn btn-sm btn-success" target="_blank"><i class="fa fa-file"></i> Lihat File</a>
+                                                </td>
+                                                <td>
+                                                    <form action="{{ route('delete.file')}}" method="POST">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Yakin ingin menghapus file ini??')"><i class="fa fa-trash"></i> Delete</button>
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                        @empty
+                                            <tr>
+                                                <td colspan="4" class="text-center">File Tidak Ada</td>
+                                            </tr>
+                                        @endforelse
+                                    </tbody>
                                 </table>
                             </td>
                         </tr>
