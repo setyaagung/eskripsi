@@ -111,14 +111,16 @@
                             <a class="nav-link " href="{{ url('/') }}">Panduan</a>
                         </li>
                         @auth
-                            <li class="nav-item dropdown {{ (request()->segment(2) == 'skripsi') ? 'active' : '' }}">
+                            <li class="nav-item dropdown {{ (request()->segment(2) == 'skripsi') ? 'active' : '' }} {{ (request()->segment(2) == 'jurnal') ? 'active' : '' }}">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle " href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     Penelitian Anda <span class="caret"></span>
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item {{ (request()->segment(2) == 'skripsi') ? 'active' : '' }}" href="{{ route('skripsi') }}">Skripsi</a>
-                                    <a class="dropdown-item" href="#">Jurnal</a>
+                                    <a class="dropdown-item {{ (request()->segment(2) == 'jurnal') ? 'active' : '' }}" href="{{ route('jurnal')}}">Jurnal</a>
+                                    <a class="dropdown-item" href="#">Praktek Kerja</a>
+                                    <a class="dropdown-item" href="#">SKPI</a>
                                 </div>
                             </li>
                         @endauth
