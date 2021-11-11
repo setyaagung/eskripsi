@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateJurnalTable extends Migration
+class CreateSkpiTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,11 @@ class CreateJurnalTable extends Migration
      */
     public function up()
     {
-        Schema::create('jurnal', function (Blueprint $table) {
-            $table->bigIncrements('id_jurnal');
+        Schema::create('skpi', function (Blueprint $table) {
+            $table->bigIncrements('id_skpi');
             $table->unsignedBigInteger('id_mahasiswa');
-            $table->text('judul_indo');
-            $table->text('judul_eng');
-            $table->text('abstrak_indo');
-            $table->text('abstrak_eng');
-            $table->string('keyword');
+            $table->string('nama_pelatihan');
             $table->date('tanggal');
-            $table->text('daftar_pustaka');
             $table->string('file');
             $table->timestamps();
 
@@ -37,6 +32,6 @@ class CreateJurnalTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('jurnal');
+        Schema::dropIfExists('skpi');
     }
 }

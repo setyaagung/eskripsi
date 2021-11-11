@@ -76,7 +76,12 @@
                             <div class="form-group row">
                                 <label for="" class="col-sm-2 col-form-label" style="font-size: 13px">File</label>
                                 <div class="col-sm-10">
-                                    <input type="file" class="form-control p-1" name="file" required>
+                                    <input type="file" class="form-control p-1 @error('file') is-invalid @enderror" name="file" required>
+                                    @error('file')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
                             </div>
                             <hr>

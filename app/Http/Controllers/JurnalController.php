@@ -49,7 +49,7 @@ class JurnalController extends Controller
         $data = $request->all();
         $data['id_mahasiswa'] = $mahasiswa->id_mahasiswa;
         $data['file'] = $request->file('file')->store('jurnal/file', 'public');
-        $j = Jurnal::create($data);
+        Jurnal::create($data);
         //dd($j);
         return redirect()->route('jurnal')->with('create', 'Jurnal berhasil ditambahkan');
     }

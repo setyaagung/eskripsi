@@ -32,6 +32,10 @@ Route::get('/penelitian/jurnal/create', 'JurnalController@create')->name('jurnal
 Route::post('/penelitian/jurnal/store', 'JurnalController@store')->name('jurnal.store');
 Route::delete('/penelitian/jurnal/{id}', 'JurnalController@destroy')->name('jurnal.destroy');
 
+//skpi
+Route::resource('skpi', 'SkpiController');
+
+
 Route::namespace('Admin')->middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
     Route::resource('dosen', 'DosenController');

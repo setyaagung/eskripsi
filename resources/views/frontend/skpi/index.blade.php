@@ -6,9 +6,9 @@
         <div class="col-md-12">
             <div class="card shadow-sm">
                 <div class="card-header text-white" style="background: #046314;">
-                    JURNAL
+                    Surat Keterangan Pendamping Ijazah
                     <div class="float-right">
-                        <a href="{{ route('jurnal.create')}}" class="btn btn-sm btn-warning"><i class="fa fa-file"></i> Tambah</a>
+                        <a href="{{ route('skpi.create')}}" class="btn btn-sm btn-warning"><i class="fa fa-file"></i> Tambah</a>
                     </div>
                 </div>
                 <div class="card-body">
@@ -40,25 +40,21 @@
                         <thead>
                             <tr>
                                 <th>NO</th>
-                                <th>NIM</th>
-                                <th>NAMA PENULIS</th>
-                                <th>JUDUL</th>
+                                <th>PELATIHAN/KEGIATAN</th>
                                 <th>TAHUN</th>
                                 <th>URL</th>
                                 <th>AKSI</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($jurnals as $jurnal)
+                            @foreach ($skpis as $skpi)
                                 <tr>
                                     <td>{{ $loop->iteration}}</td>
-                                    <td>{{ $jurnal->mahasiswa->nim}}</td>
-                                    <td>{{ $jurnal->mahasiswa->nama_mahasiswa}}</td>
-                                    <td>{{ $jurnal->judul_indo}}</td>
-                                    <td>{{ \Carbon\Carbon::parse($jurnal->tanggal)->isoFormat('D MMMM Y')}}</td>
-                                    <td><a href="{{ Storage::url($jurnal->file)}}" class="btn btn-sm btn-success" target="_blank"><i class="fa fa-file"></i> File</a></td>
+                                    <td>{{ $skpi->nama_pelatihan}}</td>
+                                    <td>{{ \Carbon\Carbon::parse($skpi->tanggal)->isoFormat('D MMMM Y')}}</td>
+                                    <td><a href="{{ Storage::url($skpi->file)}}" class="btn btn-sm btn-success" target="_blank"><i class="fa fa-file"></i> File</a></td>
                                     <td>
-                                        <form action="{{ route('jurnal.destroy',$jurnal->id_jurnal)}}" method="POST">
+                                        <form action="{{ route('skpi.destroy',$skpi->id_skpi)}}" method="POST">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Yakin ingin menghapus file ini??')"><i class="fa fa-trash"></i> Delete</button>

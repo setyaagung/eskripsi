@@ -111,7 +111,7 @@
                             <a class="nav-link " href="{{ url('/') }}">Panduan</a>
                         </li>
                         @auth
-                            <li class="nav-item dropdown {{ (request()->segment(2) == 'skripsi') ? 'active' : '' }} {{ (request()->segment(2) == 'jurnal') ? 'active' : '' }}">
+                            <li class="nav-item dropdown {{ (request()->segment(2) == 'skripsi') ? 'active' : '' }} {{ (request()->segment(2) == 'jurnal') ? 'active' : '' }} {{ (request()->segment(1) == 'skpi') ? 'active' : '' }}">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle " href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     Penelitian Anda <span class="caret"></span>
                                 </a>
@@ -120,7 +120,7 @@
                                     <a class="dropdown-item {{ (request()->segment(2) == 'skripsi') ? 'active' : '' }}" href="{{ route('skripsi') }}">Skripsi</a>
                                     <a class="dropdown-item {{ (request()->segment(2) == 'jurnal') ? 'active' : '' }}" href="{{ route('jurnal')}}">Jurnal</a>
                                     <a class="dropdown-item" href="#">Praktek Kerja</a>
-                                    <a class="dropdown-item" href="#">SKPI</a>
+                                    <a class="dropdown-item {{ (request()->segment(1) == 'skpi') ? 'active' : '' }}" href="{{ route('skpi.index')}}">SKPI</a>
                                 </div>
                             </li>
                         @endauth
@@ -167,7 +167,6 @@
         </main>
         <!-- Footer -->
         <footer class="text-center text-lg-start text-white" style="background: #046314;">
-
             <!-- Section: Links  -->
             <section class="p-1">
                 <div class="container text-center text-md-start mt-5">
@@ -179,73 +178,73 @@
                             <h5 class="text-uppercase fw-bold mb-4">
                                 Perpustakaan<br>STIE Cendekia Karya Utama
                             </h5>
-                    <p>
-                      Here you can use rows and columns to organize your footer content. Lorem ipsum
-                      dolor sit amet, consectetur adipisicing elit.
-                    </p>
-                  </div>
-                  <!-- Grid column -->
+                            <p>
+                                Here you can use rows and columns to organize your footer content. Lorem ipsum
+                                dolor sit amet, consectetur adipisicing elit.
+                            </p>
+                        </div>
+                        <!-- Grid column -->
 
-                  <!-- Grid column -->
-                  <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-                    <!-- Links -->
-                    <h6 class="text-uppercase fw-bold mb-4">
-                      Products
-                    </h6>
-                    <p>
-                      <a href="#!" class="text-reset">Angular</a>
-                    </p>
-                    <p>
-                      <a href="#!" class="text-reset">React</a>
-                    </p>
-                    <p>
-                      <a href="#!" class="text-reset">Vue</a>
-                    </p>
-                    <p>
-                      <a href="#!" class="text-reset">Laravel</a>
-                    </p>
-                  </div>
-                  <!-- Grid column -->
+                        <!-- Grid column -->
+                        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                            <!-- Links -->
+                            <h6 class="text-uppercase fw-bold mb-4">
+                                Products
+                            </h6>
+                            <p>
+                                <a href="#!" class="text-reset">Angular</a>
+                            </p>
+                            <p>
+                                <a href="#!" class="text-reset">React</a>
+                            </p>
+                            <p>
+                                <a href="#!" class="text-reset">Vue</a>
+                            </p>
+                            <p>
+                                <a href="#!" class="text-reset">Laravel</a>
+                            </p>
+                        </div>
+                        <!-- Grid column -->
 
-                  <!-- Grid column -->
-                  <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                    <!-- Links -->
-                    <h6 class="text-uppercase fw-bold mb-4">
-                      Useful links
-                    </h6>
-                    <p>
-                      <a href="#!" class="text-reset">Pricing</a>
-                    </p>
-                    <p>
-                      <a href="#!" class="text-reset">Settings</a>
-                    </p>
-                    <p>
-                      <a href="#!" class="text-reset">Orders</a>
-                    </p>
-                    <p>
-                      <a href="#!" class="text-reset">Help</a>
-                    </p>
-                  </div>
-                  <!-- Grid column -->
+                        <!-- Grid column -->
+                        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                            <!-- Links -->
+                            <h6 class="text-uppercase fw-bold mb-4">
+                                Useful links
+                            </h6>
+                            <p>
+                                <a href="#!" class="text-reset">Pricing</a>
+                            </p>
+                            <p>
+                                <a href="#!" class="text-reset">Settings</a>
+                            </p>
+                            <p>
+                                <a href="#!" class="text-reset">Orders</a>
+                            </p>
+                            <p>
+                                <a href="#!" class="text-reset">Help</a>
+                            </p>
+                        </div>
+                        <!-- Grid column -->
 
-                  <!-- Grid column -->
-                  <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-                    <!-- Links -->
-                    <h6 class="text-uppercase fw-bold mb-4">
-                      Contact
-                    </h6>
-                    <p><i class="fa fa-home me-3"></i> New York, NY 10012, US</p>
-                    <p>
-                      <i class="fa fa-envelope me-3"></i>
-                      info@example.com
-                    </p>
-                    <p><i class="fa fa-phone me-3"></i> + 01 234 567 88</p>
-                    <p><i class="fa fa-print me-3"></i> + 01 234 567 89</p>
-                  </div>
-                  <!-- Grid column -->
+                        <!-- Grid column -->
+                        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                            <!-- Links -->
+                            <h6 class="text-uppercase fw-bold mb-4">
+                                Contact
+                            </h6>
+                            <p><i class="fa fa-home me-3"></i> STIE Cendekia Karya Utama</p>
+                            <p>
+                                <i class="fa fa-envelope me-3"></i>
+                                admin@cendekiaku.ac.id
+                            </p>
+                            <p><i class="fa fa-phone me-3"></i> + 01 234 567 88</p>
+                            <p><i class="fa fa-print me-3"></i> + 01 234 567 89</p>
+                        </div>
+                        <!-- Grid column -->
+                    </div>
+                    <!-- Grid row -->
                 </div>
-                <!-- Grid row -->
-              </div>
             </section>
             <!-- Section: Links  -->
             <!-- Copyright -->
