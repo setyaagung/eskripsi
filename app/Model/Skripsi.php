@@ -50,4 +50,9 @@ class Skripsi extends Model
     {
         return $this->belongsTo(Dosen::class, 'penguji3', 'id_dosen');
     }
+
+    public function mahasiswa()
+    {
+        return $this->belongsTo(Mahasiswa::class, 'id_mahasiswa');
+    }
 }

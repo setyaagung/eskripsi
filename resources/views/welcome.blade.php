@@ -18,16 +18,28 @@
     </div>
 @endsection
 @section('content')
-    <div class="welcome">
+    <div class="jurnal" style="min-height: 30vh">
         <div class="container">
-            <h4>E-skripsi STIE Cendekia Karya Utama</h4>
-            <hr style="border-top: 1px solid #eaeaea !important;margin-top: -2px">
-            <p class="text-justify" style="font-size: 14px">E-skripsi STIE Cendekia Karya Utama adalah layanan digital untuk pelestarian dan distribusi penelitian ilmiah tentang format materi digital. Hal ini memudahkan sivitas akademika untuk melestarikan dan membagikan publikasi ilmiahnya. Eskripsi ini juga merupakan sistem interoperable yang di-host dan dikelola oleh Perpustakaan Universitas.</p>
-        </div>
-    </div>
-    <div class="jurnal mt-5" style="min-height: 30vh">
-        <div class="container">
-
+            <div class="row">
+                <div class="col-md-9">
+                    <h5 class="mb-4"><i class="fa fa-book"></i> &nbsp;&nbsp;Recently Added</h5>
+                    <hr style="margin-top: -15px">
+                    @foreach ($skripsis as $skripsi)
+                        <div class="penelitian">
+                            <a href="" class="text-justify" style="font-size: 17px;">{{ $skripsi->judul_indo}}</a>
+                            <p style="color: #B4C6A6;font-size: 13px;"><i>Skripsi, {{ $skripsi->mahasiswa->program_studi}}, {{ \Carbon\Carbon::parse($skripsi->created_at)->format('Y')}}</i></p>
+                            <p style="margin-top: -15px;font-size: 13px;">{{ $skripsi->mahasiswa->nama_mahasiswa}}</p>
+                            <p style="margin-top: -15px;color: #B4C6A6;font-size: 13px;"><i>View 3039</i></p>
+                        </div>
+                    @endforeach
+                </div>
+                <div class="col-md-3">
+                    <h5 class="mb-4"><i class="fa fa-globe"></i> &nbsp;&nbsp;Browse</h5>
+                </div>
+            </div>
+            <div class="mt-4">
+                {{ $skripsis->links()}}
+            </div>
         </div>
     </div>
 @endsection

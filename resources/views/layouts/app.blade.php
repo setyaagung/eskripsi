@@ -45,6 +45,24 @@
             color: gray;
             font-weight: 200;
         }
+        .penelitian a{
+            color: blue
+        }
+        .penelitian a:hover{
+            color: coral
+        }
+        .page-item.active .page-link {
+            background-color: #046314;
+            border-color: #046314;
+        }
+
+        .page-item.disabled .page-link {
+            color: #046314;
+        }
+
+        .page-item .page-link {
+            color: #046314;
+        }
         @media (max-width: 576px) {
             .jumbotron .display-4 {
                 font-size: 28px !important;
@@ -52,7 +70,7 @@
         }
     </style>
 </head>
-<body>
+<body class="bg-white">
     <div id="app">
         <nav class="banner">
             <div class="container">
@@ -105,7 +123,7 @@
                             <a class="nav-link {{ (request()->segment(1) == '') ? 'active' : '' }}" href="{{ url('/') }}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="{{ url('/') }}">Tentang</a>
+                            <a class="nav-link {{ (request()->segment(1) == 'tentang') ? 'active' : '' }}" href="{{ route('tentang') }}">Tentang</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link " href="{{ url('/') }}">Panduan</a>
