@@ -26,7 +26,7 @@
                     <hr style="margin-top: -15px">
                     @foreach ($skripsis as $skripsi)
                         <div class="penelitian">
-                            <a href="" class="text-justify" style="font-size: 17px;">{{ $skripsi->judul_indo}}</a>
+                            <a href="{{ route('detail_skripsi',$skripsi->slug)}}" class="text-justify" style="font-size: 17px;">{{ $skripsi->judul_indo}}</a>
                             <p style="color: #B4C6A6;font-size: 13px;"><i>Skripsi, {{ $skripsi->mahasiswa->program_studi}}, {{ \Carbon\Carbon::parse($skripsi->created_at)->format('Y')}}</i></p>
                             <p style="margin-top: -15px;font-size: 13px;">{{ $skripsi->mahasiswa->nama_mahasiswa}}</p>
                             <p style="margin-top: -15px;color: #B4C6A6;font-size: 13px;"><i>View 3039</i></p>
@@ -34,7 +34,21 @@
                     @endforeach
                 </div>
                 <div class="col-md-3">
-                    <h5 class="mb-4"><i class="fa fa-globe"></i> &nbsp;&nbsp;Browse</h5>
+                    <h5 class="mb-1"><i class="fa fa-globe"></i> &nbsp;&nbsp;Browse</h5>
+                    <ul class="list-group" style="font-size: 16px;margin-left: 10px">
+                        <li class="list-group-item" style="border: none;margin-bottom: -15px">
+                            Dosen
+                            <span class="badge badge-primary badge-pill">{{ $dosen}}</span>
+                        </li>
+                        <li class="list-group-item" style="border: none;margin-bottom: -15px">
+                            Skripsi
+                            <span class="badge badge-primary badge-pill">{{ $count_skripsi}}</span>
+                        </li>
+                        <li class="list-group-item" style="border: none;">
+                            Pengguna
+                            <span class="badge badge-primary badge-pill">{{ $users}}</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
             <div class="mt-4">

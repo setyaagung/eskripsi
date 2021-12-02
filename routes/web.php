@@ -16,6 +16,8 @@
 //});
 Route::get('/', 'HomePenelitianController@index');
 Route::get('/tentang', 'HomePenelitianController@tentang')->name('tentang');
+Route::get('/panduan', 'HomePenelitianController@panduan')->name('panduan');
+Route::get('/view/{slug}', 'HomePenelitianController@detail_skripsi')->name('detail_skripsi');
 
 Auth::routes([
     'reset' => false
