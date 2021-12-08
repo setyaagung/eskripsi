@@ -14,7 +14,29 @@
             <div class="container">
                 <h4 class="font-weight-bold ">Tentang</h4>
                 <hr style="border-top: 1px solid #eaeaea !important;margin-top: -2px">
-                <p class="text-justify" style="font-size: 15px">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo natus aliquam nesciunt earum eaque? Autem recusandae, alias est esse possimus sit labore repellat in, illo excepturi numquam? Eius iste ipsa molestias minima quae error ex ipsum, harum aut distinctio dolorum odit culpa hic atque amet id eligendi dolor nostrum exercitationem. Cum facere quod, dolore ad rerum cumque iure voluptatibus optio repellendus tempore quae explicabo, delectus, rem tempora autem quo. In, laboriosam quis. Repudiandae quisquam accusantium tempore impedit amet! Quo sunt dolor, tempora temporibus voluptatibus culpa praesentium assumenda dicta non omnis expedita pariatur aliquid id placeat, voluptatem quae aliquam atque cum magni, dignissimos at. Perspiciatis ratione nihil id delectus totam qui ea dolores cupiditate aliquam consequuntur dolorem, magnam magni, tenetur quasi quod quae aperiam nisi dolorum ipsam est. Voluptas ab amet labore aut atque quidem nulla id nobis, voluptatum similique dolor? Reiciendis, recusandae voluptatem beatae nesciunt, nam omnis laborum incidunt harum nemo, modi tempora consectetur asperiores voluptate est maxime placeat at deleniti cumque porro nulla minus possimus? Nam, et distinctio voluptates laboriosam, magni dignissimos non repellat esse dolorum cumque ullam quo sapiente dolorem pariatur architecto animi numquam, recusandae magnam odio eligendi fugiat fuga ut? Eaque magni consequatur numquam, quis exercitationem nihil adipisci mollitia laboriosam facere harum cupiditate veniam! Sapiente minus id culpa maiores incidunt expedita nihil eveniet. Laboriosam suscipit vitae, praesentium est eaque laborum soluta illo eos facere aliquid doloremque quae possimus nemo quos tenetur officiis cumque minima. Fuga culpa aliquam laudantium suscipit? Minus deleniti nisi quidem cum ipsum accusantium, dolorem dignissimos veritatis illo excepturi mollitia accusamus sequi nihil corrupti est quasi inventore animi distinctio! Suscipit ad deserunt voluptate incidunt ut repellendus consectetur veniam saepe eos illo adipisci voluptatem, sed quis tempora culpa non autem ea quae ipsa rerum, molestiae enim! Ut, soluta dignissimos. Voluptatum obcaecati pariatur similique, eius temporibus maxime.</p>
+                <p class="text-justify" style="font-size: 15px">
+                    STIE Cendekia Karya Utama sudah bertekad untuk melahirkan lulusan yang unggul, profesional serta berakhlaq mulia. STIE Cendekia Karya Utama menjadi satu-satunya yang juga mengembangkan bakat-bakat mahasiswanya sesuai genetika masing-masing menggunakan konsep STIFIn.  Dengan begitu, kami bisa membantu secara total untuk kemajuan lulusan setelah selesai proses belajar di kampus. Kami sediakan fasilitas-fasilitasnya. Mau menjadi tenaga profesional yang siap go-international maupun mau menjadi seorang entrepreneur yang bisa melihat peluang dan mencetak lapangan pekerjaan.
+                </p>
+                <p class="text-justify" style="font-size: 15px">
+                    STIE Cendekia Karya Utama dengan tujuan mulianya untuk mencetak lulusan yang unggul, profesional dan berakhlaq mulia, maka kami persembahkan fasilitas dibawah ini :
+                    <ul>
+                        <li>Logistik Internasional – bekerja sama dengan perusahaan-perusahaan logistik ASEAN</li>
+                        <li>Entrepreneurship – mencetak lulusan yang siap membangun bisnis</li>
+                        <li>Pengembangan Kepribadian – dengan menggunakan konsep STIFIn</li>
+                    </ul>
+                </p>
+                <p class="text-justify" style="font-size: 15px">
+                    Strategi pencapaian CKU dapat dijabarkan sebagai berikut :
+                    <ul>
+                        <li>Meningkatkan peringkat akreditasi terbaik dari lembaga akreditasi nasional dan internasional</li>
+                        <li>Meningkatkan budaya dan kualitas riset, semangat enterpreneur, inovasi, tepat guna, dan menghasilkan terobosan pemikiran serta dapat diterapkan dalam pengabdian kepada masyarakat</li>
+                        <li>Meningkatkan daya saing lulusan, baik ditingkat nasional maupun internasional</li>
+                        <li>Memperkokoh landasan sumber daya manusia pada etika dan berorientasi pada kinerja, integritas dan integrasi sivitas akademika</li>
+                        <li>Merekrut mahasiswa dari berbagai latar belakang untuk di didik sehingga memiliki kemampuan akademis & ketrampilan yang baik</li>
+                        <li>Memperkuat kolaborasi dan kemitraan dalam pendidikan, riset, dan antara pendidikan dan riset, dalam iklim akademik yang dinamis tanpa batas</li>
+                        <li>Mengembangkan Sarana dan Prasarana yang berkualitas dalam upaya mewujudkan layanan prima yang efisien dan efektif</li>
+                    </ul>
+                </p>
             </div>
         </div>
     </div>

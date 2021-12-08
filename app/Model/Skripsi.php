@@ -27,7 +27,8 @@ class Skripsi extends Model
         'daftar_pustaka',
         'nilai_angka',
         'nilai_huruf',
-        'slug'
+        'slug',
+        'views'
     ];
 
     public function pem1()

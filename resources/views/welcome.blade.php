@@ -29,7 +29,7 @@
                             <a href="{{ route('detail_skripsi',$skripsi->slug)}}" class="text-justify" style="font-size: 17px;">{{ $skripsi->judul_indo}}</a>
                             <p style="color: #B4C6A6;font-size: 13px;"><i>Skripsi, {{ $skripsi->mahasiswa->program_studi}}, {{ \Carbon\Carbon::parse($skripsi->created_at)->format('Y')}}</i></p>
                             <p style="margin-top: -15px;font-size: 13px;">{{ $skripsi->mahasiswa->nama_mahasiswa}}</p>
-                            <p style="margin-top: -15px;color: #B4C6A6;font-size: 13px;"><i>View 3039</i></p>
+                            <p style="margin-top: -15px;color: #B4C6A6;font-size: 13px;"><i>View {{ $skripsi->views}}</i></p>
                         </div>
                     @endforeach
                 </div>
@@ -49,6 +49,18 @@
                             <span class="badge badge-primary badge-pill">{{ $users}}</span>
                         </li>
                     </ul>
+                    @guest
+                        <hr>
+                        <h5 class="mb-1 mt-4"><i class="fa fa-user"></i> &nbsp;&nbsp;Account</h5>
+                        <ul class="list-group" style="font-size: 16px;margin-left: 10px">
+                            <li class="list-group-item" style="border: none;margin-bottom: -15px">
+                                <a href="{{ route('login')}}" class="text-dark">Login</a>
+                            </li>
+                            <li class="list-group-item" style="border: none;margin-bottom: -15px">
+                                <a href="{{ route('register')}}" class="text-dark">Register</a>
+                            </li>
+                        </ul>
+                    @endguest
                 </div>
             </div>
             <div class="mt-4">

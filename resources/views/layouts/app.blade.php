@@ -51,6 +51,9 @@
         .penelitian a:hover{
             color: coral
         }
+        .list-group .list-group-item a:hover{
+            color: coral !important
+        }
         .page-item.active .page-link {
             background-color: #046314;
             border-color: #046314;
@@ -62,6 +65,9 @@
 
         .page-item .page-link {
             color: #046314;
+        }
+        footer a:hover{
+            color: #f4ec10 !important
         }
         @media (max-width: 576px) {
             .jumbotron .display-4 {
@@ -197,8 +203,7 @@
                                 Perpustakaan<br>STIE Cendekia Karya Utama
                             </h5>
                             <p>
-                                Here you can use rows and columns to organize your footer content. Lorem ipsum
-                                dolor sit amet, consectetur adipisicing elit.
+                                Melahirkan lulusan yang unggul, profesional serta berakhlaq mulia. STIE Cendekia Karya Utama menjadi satu-satunya yang juga mengembangkan bakat-bakat mahasiswanya sesuai genetika masing-masing menggunakan konsep STIFIn
                             </p>
                         </div>
                         <!-- Grid column -->
@@ -207,19 +212,19 @@
                         <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
                             <!-- Links -->
                             <h6 class="text-uppercase fw-bold mb-4">
-                                Products
+                                Information
                             </h6>
                             <p>
-                                <a href="#!" class="text-reset">Angular</a>
+                                <a href="https://cendekiaku.ac.id/" class="text-reset text-white" target="_blank">STIE Cendekia Karya Utama</a>
                             </p>
                             <p>
-                                <a href="#!" class="text-reset">React</a>
+                                <a href="https://www.siacku.cendekiaku.com/auth" class="text-reset text-white" target="_blank">Sistem Akademik</a>
                             </p>
                             <p>
-                                <a href="#!" class="text-reset">Vue</a>
+                                <a href="https://ojs.cendekiaku.ac.id/" class="text-reset text-white" target="_blank">Jurnal</a>
                             </p>
                             <p>
-                                <a href="#!" class="text-reset">Laravel</a>
+                                <a href="http://simpus.cendekiaku.ac.id/" class="text-reset text-white" target="_blank">Perpustakaan</a>
                             </p>
                         </div>
                         <!-- Grid column -->
@@ -228,19 +233,19 @@
                         <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
                             <!-- Links -->
                             <h6 class="text-uppercase fw-bold mb-4">
-                                Useful links
+                                Pages
                             </h6>
                             <p>
-                                <a href="#!" class="text-reset">Pricing</a>
+                                <a href="#!" class="text-reset text-white">Home</a>
                             </p>
                             <p>
-                                <a href="#!" class="text-reset">Settings</a>
+                                <a href="#!" class="text-reset text-white">Tentang</a>
                             </p>
                             <p>
-                                <a href="#!" class="text-reset">Orders</a>
+                                <a href="#!" class="text-reset text-white">Panduan</a>
                             </p>
                             <p>
-                                <a href="#!" class="text-reset">Help</a>
+                                <a href="#!" class="text-reset text-white">Help</a>
                             </p>
                         </div>
                         <!-- Grid column -->

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Model\Dosen;
+use App\Model\File;
 use App\Model\Mahasiswa;
 use App\Model\Skripsi;
 use Illuminate\Http\Request;
@@ -21,7 +22,9 @@ class HomePenelitianController extends Controller
     public function detail_skripsi($slug)
     {
         $skripsi = Skripsi::where('slug', $slug)->first();
-        return view('frontend.detail_skripsi', \compact('skripsi'));
+        Skripsi::find($skripsi->id_skripsi)->increment('views');
+        $files = File::where('id_skripsi', $skripsi->id_skripsi)->get();
+        return view('frontend.detail_skripsi', \compact('skripsi', 'files'));
     }
 
     public function tentang()
