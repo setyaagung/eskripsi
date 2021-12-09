@@ -12,7 +12,7 @@ class Skripsi extends Model
         'id_mahasiswa',
         'mulai_bimbingan',
         'selesai_bimbingan',
-        'aprrove',
+        'approve',
         'publish',
         'pembimbing1',
         'pembimbing2',

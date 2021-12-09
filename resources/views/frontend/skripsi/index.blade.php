@@ -122,10 +122,22 @@
                         <tr>
                             <td>Publish</td>
                             <td>:</td>
-                            <td>{{ $skripsi->publish}}</td>
+                            <td>
+                                @if ($skripsi->publish == 1)
+                                    <span class="badge badge-success"><i class="fa fa-check"></i> Disetujui</span>
+                                @else
+                                    <span class="badge badge-danger"><i class="fa fa-timess"></i> Tidak Disetujui</span>
+                                @endif
+                            </td>
                             <td>Approve</td>
                             <td>:</td>
-                            <td>{{ $skripsi->aprrove}}</td>
+                            <td>
+                                @if ($skripsi->approve == 1)
+                                    <span class="badge badge-success"><i class="fa fa-check"></i> Disetujui</span>
+                                @else
+                                    <span class="badge badge-danger"><i class="fa fa-timess"></i> Tidak Disetujui</span>
+                                @endif
+                            </td>
                         </tr>
                         <tr>
                             <td>Judul Indo</td>

@@ -18,8 +18,8 @@ class CreateSkripsiTable extends Migration
             $table->unsignedBigInteger('id_mahasiswa');
             $table->date('mulai_bimbingan')->nullable();
             $table->date('selesai_bimbingan')->nullable();
-            $table->string('aprrove')->default('Tidak');
-            $table->string('publish')->default('Tidak');
+            $table->string('aprrove')->default(0);
+            $table->string('publish')->default(0);
             $table->unsignedBigInteger('pembimbing1')->nullable();
             $table->unsignedBigInteger('pembimbing2')->nullable();
             $table->unsignedBigInteger('penguji1')->nullable();

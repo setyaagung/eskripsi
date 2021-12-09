@@ -106,12 +106,24 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>Publish</td>
-                                    <td>:</td>
-                                    <td>{{ $skripsi->publish}}</td>
-                                    <td>Approve</td>
-                                    <td>:</td>
-                                    <td>{{ $skripsi->aprrove}}</td>
+                                    <td style="width: 15%">Approve</td>
+                                    <td style="width: 2%">:</td>
+                                    <td style="width: 33%">
+                                        @if ($skripsi->approve == 1)
+                                            <input type="checkbox" class="approve" name="approve" data-id="{{ $skripsi->id_skripsi}}" checked>
+                                        @else
+                                            <input type="checkbox" class="approve" name="approve" data-id="{{ $skripsi->id_skripsi}}">
+                                        @endif
+                                    </td>
+                                    <td style="width: 15%">Publish</td>
+                                    <td style="width: 2%">:</td>
+                                    <td style="width: 33%">
+                                        @if ($skripsi->publish == 1)
+                                            <input type="checkbox" class="publish" name="publish" data-id="{{ $skripsi->id_skripsi}}" checked>
+                                        @else
+                                            <input type="checkbox" class="publish" name="publish" data-id="{{ $skripsi->id_skripsi}}">
+                                        @endif
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>Judul Indo</td>
@@ -153,9 +165,17 @@
                                                     <th>NO</th>
                                                     <th>JENIS</th>
                                                     <th>FILE</th>
-                                                    <th>AKSI</th>
                                                 </tr>
                                             </thead>
+                                            <tbody>
+                                                @foreach ($files as $file)
+                                                    <tr>
+                                                        <td>{{ $loop->iteration}}</td>
+                                                        <td>{{ $file->jenis_file}}</td>
+                                                        <td><a href="{{ Storage::url($file->nama_file)}}" class="btn btn-danger btn-sm" target="_blank"><i class="fa fa-file"></i> Lihat File</a></td>
+                                                    </tr>
+                                                @endforeach
+                                            </tbody>
                                         </table>
                                     </td>
                                 </tr>
@@ -167,3 +187,41 @@
         </div>
     </section>
 @endsection
+
+@push('scripts')
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.approve').click(function (e) {
+                e.preventDefault();
+                var id = $(this).attr('data-id');
+
+                $.ajax({
+                    url: '/mahasiswa/update-approve/'+id,
+                    type: 'GET',
+                    success: function (response) {
+                        alert('Approve Skripsi Berhasil Diperbarui') ? "": location.reload();
+                        //alertify.set('notifier', 'position', 'top-right');
+                        //alertify.success(response.status);
+                    }
+                });
+
+            });
+
+            $('.publish').click(function (e) {
+                e.preventDefault();
+                var id = $(this).attr('data-id');
+
+                $.ajax({
+                    url: '/mahasiswa/update-publish/'+id,
+                    type: 'GET',
+                    success: function (response) {
+                        alert('Publish Skripsi Berhasil Diperbarui') ? "": location.reload();
+                        //alertify.set('notifier', 'position', 'top-right');
+                        //alertify.success(response.status);
+                    }
+                });
+
+            });
+        });
+    </script>
+@endpush

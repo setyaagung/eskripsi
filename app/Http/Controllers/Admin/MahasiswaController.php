@@ -4,7 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Model\File;
+use App\Model\Jurnal;
 use App\Model\Mahasiswa;
+use App\Model\Skpi;
 use App\Model\Skripsi;
 
 class MahasiswaController extends Controller
@@ -90,6 +93,44 @@ class MahasiswaController extends Controller
     {
         $mahasiswa = Mahasiswa::findOrFail($id);
         $skripsi = Skripsi::where('id_mahasiswa', $mahasiswa->id_mahasiswa)->first();
-        return view('backend.mahasiswa.show-skripsi', \compact('mahasiswa', 'skripsi'));
+        $files = File::where('id_skripsi', $skripsi->id_skripsi)->get();
+        return view('backend.mahasiswa.show-skripsi', \compact('mahasiswa', 'skripsi', 'files'));
+    }
+    public function show_skpi($id)
+    {
+        $mahasiswa = Mahasiswa::findOrFail($id);
+        $skpis = Skpi::where('id_mahasiswa', $mahasiswa->id_mahasiswa)->get();
+        return view('backend.mahasiswa.show-skpi', \compact('mahasiswa', 'skpis'));
+    }
+    public function show_jurnal($id)
+    {
+        $mahasiswa = Mahasiswa::findOrFail($id);
+        $jurnals = Jurnal::where('id_mahasiswa', $mahasiswa->id_mahasiswa)->get();
+        return view('backend.mahasiswa.show-jurnal', \compact('mahasiswa', 'jurnals'));
+    }
+    public function update_publish($id)
+    {
+        $mahasiswa = Mahasiswa::findOrFail($id);
+        $skripsi = Skripsi::where('id_mahasiswa', $mahasiswa->id_mahasiswa)->first();
+        if ($skripsi->publish == 1) {
+            $publish = 0;
+        } else {
+            $publish = 1;
+        }
+        $skripsi->publish = $publish;
+        $skripsi->update();
+    }
+
+    public function update_approve($id)
+    {
+        $mahasiswa = Mahasiswa::findOrFail($id);
+        $skripsi = Skripsi::where('id_mahasiswa', $mahasiswa->id_mahasiswa)->first();
+        if ($skripsi->approve == 1) {
+            $approve = 0;
+        } else {
+            $approve = 1;
+        }
+        $skripsi->approve = $approve;
+        $skripsi->update();
     }
 }

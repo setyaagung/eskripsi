@@ -129,6 +129,9 @@
                             <a class="nav-link {{ (request()->segment(1) == '') ? 'active' : '' }}" href="{{ url('/') }}">Home</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link {{ (request()->segment(1) == 'praja') ? 'active' : '' }}" href="#">Praktek Kerja</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link {{ (request()->segment(1) == 'tentang') ? 'active' : '' }}" href="{{ route('tentang') }}">Tentang</a>
                         </li>
                         <li class="nav-item">

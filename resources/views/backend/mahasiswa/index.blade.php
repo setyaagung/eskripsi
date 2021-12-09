@@ -62,8 +62,9 @@
                                             <td>{{ $mahasiswa->program_studi}}</td>
                                             <td>
                                                 <a href="{{ route('mahasiswa.skripsi',$mahasiswa->id_mahasiswa)}}" class="btn btn-sm btn-success"><i class="fas fa-file-archive"></i> Skripsi</a>
-                                                <a href="#" class="btn btn-info btn-sm"><i class="fas fa-edit"></i> Jurnal</a>
-                                                <a href="#" class="btn btn-danger btn-sm"><i class="fas fa-folder"></i> SKPI</a>
+                                                <a href="{{ route('mahasiswa.jurnal',$mahasiswa->id_mahasiswa)}}" class="btn btn-info btn-sm"><i class="fas fa-edit"></i> Jurnal</a>
+                                                <a href="{{ route('mahasiswa.skpi',$mahasiswa->id_mahasiswa)}}" class="btn btn-danger btn-sm"><i class="fas fa-folder"></i> SKPI</a>
+                                                <a href="#" class="btn btn-secondary btn-sm"><i class="fas fa-file-alt"></i> Praja</a>
                                             </td>
                                         </tr>
                                     @endforeach

@@ -10,6 +10,21 @@
                         <p class="mt-4" style="color: #B4C6A6;font-size: 13px;"><i>Skripsi, {{ $skripsi->mahasiswa->program_studi}}, {{ \Carbon\Carbon::parse($skripsi->created_at)->format('Y')}}</i></p>
                         <p style="margin-top: -15px;font-size: 13px;">{{ $skripsi->mahasiswa->nama_mahasiswa}}</p>
                         <hr style="border-top: 1px solid #eaeaea !important;margin-top: -13px">
+                        <h6 class="font-weight-bold">Pembimbing</h6>
+                        <p class="text-justify">
+                            <ul>
+                                <li>Pembimbing 1 : {{ $skripsi->pem1->nama_dosen}}</li>
+                                <li>Pembimbing 2 : {{ $skripsi->pem2->nama_dosen}}</li>
+                            </ul>
+                        </p>
+                        <h6 class="font-weight-bold">Penguji</h6>
+                        <p class="text-justify">
+                            <ul>
+                                <li>Penguji 1 : {{ $skripsi->peng1->nama_dosen}}</li>
+                                <li>Penguji 2 : {{ $skripsi->peng2->nama_dosen}}</li>
+                                <li>Penguji 3 : {{ $skripsi->peng3->nama_dosen}}</li>
+                            </ul>
+                        </p>
                         <h6 class="font-weight-bold">URL</h6>
                         <table class="table table-sm table-borderless" style="width: 100%">
                             <thead>

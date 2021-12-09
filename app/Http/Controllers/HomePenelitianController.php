@@ -12,7 +12,7 @@ class HomePenelitianController extends Controller
 {
     public function index()
     {
-        $skripsis = Skripsi::paginate(10);
+        $skripsis = Skripsi::where('publish', 1)->paginate(10);
         $count_skripsi = Skripsi::where('publish', 1)->count();
         $users = Mahasiswa::count();
         $dosen = Dosen::count();
