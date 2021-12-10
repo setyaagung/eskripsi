@@ -196,7 +196,7 @@
                 var id = $(this).attr('data-id');
 
                 $.ajax({
-                    url: '/mahasiswa/update-approve/'+id,
+                    url: '/update-approve/'+id,
                     type: 'GET',
                     success: function (response) {
                         alert('Approve Skripsi Berhasil Diperbarui') ? "": location.reload();
@@ -212,7 +212,7 @@
                 var id = $(this).attr('data-id');
 
                 $.ajax({
-                    url: '/mahasiswa/update-publish/'+id,
+                    url: '/update-publish/'+id,
                     type: 'GET',
                     success: function (response) {
                         alert('Publish Skripsi Berhasil Diperbarui') ? "": location.reload();

@@ -135,7 +135,7 @@
                             <a class="nav-link {{ (request()->segment(1) == 'tentang') ? 'active' : '' }}" href="{{ route('tentang') }}">Tentang</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {{ (request()->segment(1) == 'panduan') ? 'active' : '' }}" href="{{ route('panduan') }}">Panduan</a>
+                            <a class="nav-link {{ (request()->segment(1) == 'panduan-skripsi') ? 'active' : '' }}" href="{{ route('panduan') }}">Panduan</a>
                         </li>
                         @auth
                             <li class="nav-item dropdown {{ (request()->segment(2) == 'skripsi') ? 'active' : '' }} {{ (request()->segment(2) == 'jurnal') ? 'active' : '' }} {{ (request()->segment(1) == 'skpi') ? 'active' : '' }}">

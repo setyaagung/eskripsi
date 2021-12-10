@@ -16,7 +16,7 @@
 //});
 Route::get('/', 'HomePenelitianController@index');
 Route::get('/tentang', 'HomePenelitianController@tentang')->name('tentang');
-Route::get('/panduan', 'HomePenelitianController@panduan')->name('panduan');
+Route::get('/panduan-skripsi', 'HomePenelitianController@panduan')->name('panduan');
 Route::get('/view/{slug}', 'HomePenelitianController@detail_skripsi')->name('detail_skripsi');
 
 Auth::routes([
@@ -47,8 +47,8 @@ Route::namespace('Admin')->middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('/mahasiswa/{id}/skripsi', 'MahasiswaController@show_skripsi')->name('mahasiswa.skripsi');
     Route::get('/mahasiswa/{id}/skpi', 'MahasiswaController@show_skpi')->name('mahasiswa.skpi');
     Route::get('/mahasiswa/{id}/jurnal', 'MahasiswaController@show_jurnal')->name('mahasiswa.jurnal');
-    Route::get('/mahasiswa/update-publish/{id}', 'MahasiswaController@update_publish');
-    Route::get('/mahasiswa/update-approve/{id}', 'MahasiswaController@update_approve');
+    Route::get('/update-publish/{id}', 'MahasiswaController@update_publish');
+    Route::get('/update-approve/{id}', 'MahasiswaController@update_approve');
     //user
     Route::resource('user', 'UserController');
     Route::patch('/reset-password/{id}', 'UserController@reset_password')->name('reset-password');

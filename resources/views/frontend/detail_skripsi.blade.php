@@ -13,16 +13,36 @@
                         <h6 class="font-weight-bold">Pembimbing</h6>
                         <p class="text-justify">
                             <ul>
-                                <li>Pembimbing 1 : {{ $skripsi->pem1->nama_dosen}}</li>
-                                <li>Pembimbing 2 : {{ $skripsi->pem2->nama_dosen}}</li>
+                                <li>Pembimbing 1 :
+                                    @if ( $skripsi->pembimbing1 != null)
+                                        {{ $skripsi->pem1->nama_dosen}}
+                                    @endif
+                                </li>
+                                <li>Pembimbing 2 :
+                                    @if ( $skripsi->pembimbing2 != null)
+                                        {{ $skripsi->pem2->nama_dosen}}
+                                    @endif
+                                </li>
                             </ul>
                         </p>
                         <h6 class="font-weight-bold">Penguji</h6>
                         <p class="text-justify">
                             <ul>
-                                <li>Penguji 1 : {{ $skripsi->peng1->nama_dosen}}</li>
-                                <li>Penguji 2 : {{ $skripsi->peng2->nama_dosen}}</li>
-                                <li>Penguji 3 : {{ $skripsi->peng3->nama_dosen}}</li>
+                                <li>Penguji 1 :
+                                    @if($skripsi->penguji1 != null)
+                                        {{ $skripsi->peng1->nama_dosen}}
+                                    @endif
+                                </li>
+                                <li>Penguji 2 :
+                                    @if($skripsi->penguji2 != null)
+                                        {{ $skripsi->peng2->nama_dosen}}
+                                    @endif
+                                </li>
+                                <li>Penguji 3 :
+                                    @if($skripsi->penguji3 != null)
+                                        {{ $skripsi->peng3->nama_dosen}}
+                                    @endif
+                                </li>
                             </ul>
                         </p>
                         <h6 class="font-weight-bold">URL</h6>

@@ -110,8 +110,7 @@ class MahasiswaController extends Controller
     }
     public function update_publish($id)
     {
-        $mahasiswa = Mahasiswa::findOrFail($id);
-        $skripsi = Skripsi::where('id_mahasiswa', $mahasiswa->id_mahasiswa)->first();
+        $skripsi = Skripsi::findOrFail($id);
         if ($skripsi->publish == 1) {
             $publish = 0;
         } else {
@@ -123,8 +122,7 @@ class MahasiswaController extends Controller
 
     public function update_approve($id)
     {
-        $mahasiswa = Mahasiswa::findOrFail($id);
-        $skripsi = Skripsi::where('id_mahasiswa', $mahasiswa->id_mahasiswa)->first();
+        $skripsi = Skripsi::findOrFail($id);
         if ($skripsi->approve == 1) {
             $approve = 0;
         } else {
