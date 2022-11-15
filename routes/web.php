@@ -15,9 +15,13 @@
 //    return view('welcome');
 //});
 Route::get('/', 'HomePenelitianController@index');
+Route::get('/praktek-kerja', 'HomePenelitianController@praja')->name('praktek-kerja');
 Route::get('/tentang', 'HomePenelitianController@tentang')->name('tentang');
 Route::get('/panduan-skripsi', 'HomePenelitianController@panduan')->name('panduan');
 Route::get('/view/{slug}', 'HomePenelitianController@detail_skripsi')->name('detail_skripsi');
+Route::get('/praktek-kerja/view/{slug}', 'HomePenelitianController@detail_praja')->name('detail_praja');
+Route::get('/', 'HomePenelitianController@search_skripsi')->name('search-skripsi');
+Route::get('/praktek-kerja/search-praja', 'HomePenelitianController@search_praja')->name('search-praja');
 
 Auth::routes([
     'reset' => false
@@ -38,6 +42,9 @@ Route::delete('/penelitian/jurnal/{id}', 'JurnalController@destroy')->name('jurn
 
 //skpi
 Route::resource('skpi', 'SkpiController');
+Route::get('/penelitian/praja', 'PrajaController@index')->name('praja');
+Route::get('/penelitian/praja/edit', 'PrajaController@edit_praja')->name('edit.praja');
+Route::patch('/penelitian/praja/update', 'PrajaController@update_praja')->name('update.praja');
 
 
 Route::namespace('Admin')->middleware(['auth', 'isAdmin'])->group(function () {

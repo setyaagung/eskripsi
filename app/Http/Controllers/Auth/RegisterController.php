@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\User;
 use App\Http\Controllers\Controller;
 use App\Model\Mahasiswa;
+use App\Model\Praja;
 use App\Model\Skripsi;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -81,6 +82,11 @@ class RegisterController extends Controller
         ]);
         Skripsi::create([
             'id_mahasiswa' => $mahasiswa->id_mahasiswa
+        ]);
+        Praja::create([
+            'id_mahasiswa' => $mahasiswa->id_mahasiswa,
+            'judul_praja' => $mahasiswa->nim,
+            'slug' => $mahasiswa->nim
         ]);
         return $user;
     }

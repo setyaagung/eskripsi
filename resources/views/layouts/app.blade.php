@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,6 +9,8 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>Cendekiaku Science</title>
+    <meta name="description" content="Eskripsi STIE Cendekia Karya Utama Semarang">
+    <meta name="keywords" content="moodle, Eskripsi Cendekiaku" />
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
@@ -27,33 +30,41 @@
             text-decoration: none;
             background-color: #046314;
         }
+
         .panel {
             padding: 15px;
         }
-        .panel i{
+
+        .panel i {
             width: 60px;
             height: 60px;
             color: #046314;
         }
-        .panel h4{
+
+        .panel h4 {
             font-size: 16px;
             font-weight: bold;
             margin-top: 2px;
         }
-        .panel p{
+
+        .panel p {
             font-size: 14px;
             color: gray;
             font-weight: 200;
         }
-        .penelitian a{
+
+        .penelitian a {
             color: blue
         }
-        .penelitian a:hover{
+
+        .penelitian a:hover {
             color: coral
         }
-        .list-group .list-group-item a:hover{
+
+        .list-group .list-group-item a:hover {
             color: coral !important
         }
+
         .page-item.active .page-link {
             background-color: #046314;
             border-color: #046314;
@@ -66,9 +77,11 @@
         .page-item .page-link {
             color: #046314;
         }
-        footer a:hover{
+
+        footer a:hover {
             color: #f4ec10 !important
         }
+
         @media (max-width: 576px) {
             .jumbotron .display-4 {
                 font-size: 28px !important;
@@ -76,6 +89,7 @@
         }
     </style>
 </head>
+
 <body class="bg-white">
     <div id="app">
         <nav class="banner">
@@ -91,7 +105,7 @@
                             </div>
                             <div class="col-lg mt-3">
                                 <i class="fa fa-envelope fa-3x float-left"></i>
-                                <h4 class="mt-1">perpustakaan@cku.ac.id <br>
+                                <h4 class="mt-1">perpuscku01@gmail.com <br>
                                 </h4>
                                 <p>GET IN TOUCH WITH EMAIL</p>
                             </div>
@@ -118,7 +132,9 @@
         </nav>
         <nav class="navbar navbar-expand-md navbar-dark" style="background: #046314">
             <div class="container">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
@@ -126,30 +142,40 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
-                            <a class="nav-link {{ (request()->segment(1) == '') ? 'active' : '' }}" href="{{ url('/') }}">Home</a>
+                            <a class="nav-link {{ (request()->segment(1) == '') ? 'active' : '' }}"
+                                href="{{ url('/') }}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {{ (request()->segment(1) == 'praja') ? 'active' : '' }}" href="#">Praktek Kerja</a>
+                            <a class="nav-link {{ (request()->segment(1) == 'praktek-kerja') ? 'active' : '' }}"
+                                href="{{ route('praktek-kerja') }}">Praktek Kerja</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {{ (request()->segment(1) == 'tentang') ? 'active' : '' }}" href="{{ route('tentang') }}">Tentang</a>
+                            <a class="nav-link {{ (request()->segment(1) == 'tentang') ? 'active' : '' }}"
+                                href="{{ route('tentang') }}">Tentang</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {{ (request()->segment(1) == 'panduan-skripsi') ? 'active' : '' }}" href="{{ route('panduan') }}">Panduan</a>
+                            <a class="nav-link {{ (request()->segment(1) == 'panduan-skripsi') ? 'active' : '' }}"
+                                href="{{ route('panduan') }}">Panduan</a>
                         </li>
                         @auth
-                            <li class="nav-item dropdown {{ (request()->segment(2) == 'skripsi') ? 'active' : '' }} {{ (request()->segment(2) == 'jurnal') ? 'active' : '' }} {{ (request()->segment(1) == 'skpi') ? 'active' : '' }}">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle " href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    Penelitian Anda <span class="caret"></span>
-                                </a>
+                        <li
+                            class="nav-item dropdown {{ (request()->segment(2) == 'skripsi') ? 'active' : '' }} {{ (request()->segment(2) == 'jurnal') ? 'active' : '' }} {{ (request()->segment(1) == 'skpi') ? 'active' : '' }}">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle " href="#" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                Penelitian Anda <span class="caret"></span>
+                            </a>
 
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item {{ (request()->segment(2) == 'skripsi') ? 'active' : '' }}" href="{{ route('skripsi') }}">Skripsi</a>
-                                    <a class="dropdown-item {{ (request()->segment(2) == 'jurnal') ? 'active' : '' }}" href="{{ route('jurnal')}}">Jurnal</a>
-                                    <a class="dropdown-item" href="#">Praktek Kerja</a>
-                                    <a class="dropdown-item {{ (request()->segment(1) == 'skpi') ? 'active' : '' }}" href="{{ route('skpi.index')}}">SKPI</a>
-                                </div>
-                            </li>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item {{ (request()->segment(2) == 'skripsi') ? 'active' : '' }}"
+                                    href="{{ route('skripsi') }}">Skripsi</a>
+                                <a class="dropdown-item {{ (request()->segment(2) == 'jurnal') ? 'active' : '' }}"
+                                    href="{{ route('jurnal')}}">Jurnal</a>
+                                <a class="dropdown-item {{ (request()->segment(2) == 'praja') ? 'active' : '' }}"
+                                    href="{{ route('praja')}}">Praktek Kerja</a>
+                                <a class="dropdown-item {{ (request()->segment(1) == 'skpi') ? 'active' : '' }}"
+                                    href="{{ route('skpi.index')}}">SKPI</a>
+                            </div>
+                        </li>
                         @endauth
                     </ul>
 
@@ -157,32 +183,35 @@
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         @guest
-                            <li class="nav-item">
-                                <a class="nav-link {{ (request()->segment(1) == 'login') ? 'active' : '' }}" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li>
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link {{ (request()->segment(1) == 'register') ? 'active' : '' }}" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
+                        <li class="nav-item">
+                            <a class="nav-link {{ (request()->segment(1) == 'login') ? 'active' : '' }}"
+                                href="{{ route('login') }}">{{ __('Login') }}</a>
+                        </li>
+                        @if (Route::has('register'))
+                        <li class="nav-item">
+                            <a class="nav-link {{ (request()->segment(1) == 'register') ? 'active' : '' }}"
+                                href="{{ route('register') }}">{{ __('Register') }}</a>
+                        </li>
+                        @endif
                         @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle " href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle " href="#" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                {{ Auth::user()->name }} <span class="caret"></span>
+                            </a>
+
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                    document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
                                 </a>
 
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                    document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                    style="display: none;">
+                                    @csrf
+                                </form>
+                            </div>
+                        </li>
                         @endguest
                     </ul>
                 </div>
@@ -206,7 +235,9 @@
                                 Perpustakaan<br>STIE Cendekia Karya Utama
                             </h5>
                             <p>
-                                Melahirkan lulusan yang unggul, profesional serta berakhlaq mulia. STIE Cendekia Karya Utama menjadi satu-satunya yang juga mengembangkan bakat-bakat mahasiswanya sesuai genetika masing-masing menggunakan konsep STIFIn
+                                Melahirkan lulusan yang unggul, profesional serta berakhlaq mulia. STIE Cendekia Karya
+                                Utama menjadi satu-satunya yang juga mengembangkan bakat-bakat mahasiswanya sesuai
+                                genetika masing-masing menggunakan konsep STIFIn
                             </p>
                         </div>
                         <!-- Grid column -->
@@ -218,16 +249,20 @@
                                 Information
                             </h6>
                             <p>
-                                <a href="https://cendekiaku.ac.id/" class="text-reset text-white" target="_blank">STIE Cendekia Karya Utama</a>
+                                <a href="https://cendekiaku.ac.id/" class="text-reset text-white" target="_blank">STIE
+                                    Cendekia Karya Utama</a>
                             </p>
                             <p>
-                                <a href="https://www.siacku.cendekiaku.com/auth" class="text-reset text-white" target="_blank">Sistem Akademik</a>
+                                <a href="https://www.siacku.cendekiaku.com/auth" class="text-reset text-white"
+                                    target="_blank">Sistem Akademik</a>
                             </p>
                             <p>
-                                <a href="https://ojs.cendekiaku.ac.id/" class="text-reset text-white" target="_blank">Jurnal</a>
+                                <a href="https://ojs.cendekiaku.ac.id/" class="text-reset text-white"
+                                    target="_blank">Jurnal</a>
                             </p>
                             <p>
-                                <a href="http://simpus.cendekiaku.ac.id/" class="text-reset text-white" target="_blank">Perpustakaan</a>
+                                <a href="http://simpus.cendekiaku.ac.id/" class="text-reset text-white"
+                                    target="_blank">Perpustakaan</a>
                             </p>
                         </div>
                         <!-- Grid column -->
@@ -276,7 +311,8 @@
             <!-- Copyright -->
             <div class="text-center text-white p-4">
                 © 2021 Copyright:
-                <a class="text-reset text-warning" href="https://cendekiaku.ac.id/" target="_blank">STIE Cendekia Karya Utama</a>
+                <a class="text-reset text-warning" href="https://cendekiaku.ac.id/" target="_blank">STIE Cendekia Karya
+                    Utama</a>
             </div>
             <!-- Copyright -->
         </footer>
@@ -288,11 +324,12 @@
     <!-- jQuery UI 1.11.4 -->
     <script src="{{ asset('assets/plugins/jquery-ui/jquery-ui.min.js')}}"></script>
     <!-- Bootstrap 4 -->
-		<script src="{{ asset('assets/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{ asset('assets/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
     <!-- Select2 -->
     <script src="{{ asset('assets/plugins/select2/js/select2.full.min.js')}}"></script>
     <!-- Summernote -->
     <script src="{{ asset('assets/plugins/summernote/summernote-bs4.min.js')}}"></script>
     @stack('scripts')
 </body>
+
 </html>
